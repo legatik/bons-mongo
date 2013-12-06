@@ -87,6 +87,8 @@ module.exports = function (config) {
                     if (!dbModel) {
                         // create
                         //console.log('---------CREATE', json);
+			delete json.id
+			delete json._id
                         collection.insert(json, function (err, dbModel) {
                             if (err) return error(err);
                             success(dbModel);
